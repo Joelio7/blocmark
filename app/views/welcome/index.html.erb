@@ -1,1 +1,7 @@
-<h1>Welcome to Blocmarks</h2>
+<h1>Welcome to Blocmarks</h1>
+  <h4>New Topic</h4>
+  <%= render partial: "topics/form", locals: {topic: @new_topic} %>
+  <h3> choose a topic </h3>
+  <% @topics.each do |topic| %>
+   <p><%= link_to topic.title, topic %></p>
+  <% end %>

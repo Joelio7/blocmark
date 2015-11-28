@@ -1,1 +1,18 @@
-<h1>Hello</h1>
+<h2> Welcome <%= @user.username %>  </h2>
+
+
+    <h3> Topics created by you! </h3>
+
+      <% @user.topics.each do |topic|  %>
+      <p><%= link_to topic.title, topic %></p>
+
+      <p><%= link_to "Delete", topic, method: :delete %></p>
+
+    <% end %>
+    
+
+
+  <div class="footer">
+    <h4>See what other people are interested in</h4>
+  <%= link_to "Go to topics", root_path, method: :get, class: "btn btn-primary" %>
+  </div>

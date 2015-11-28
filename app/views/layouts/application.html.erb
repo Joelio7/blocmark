@@ -4,7 +4,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <% if user_signed_in? %>
   Signed in as: <strong><%= current_user.email %></strong> |
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> - <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> - <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link' %> -
+  <%= link_to "My Profile", user_session_path, :class => 'navbar-link' %> -
+  <%= link_to "Topics", welcome_index_path, :class => 'navbar-link' %>
+
   <% else %>
   <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %>
   <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %>
