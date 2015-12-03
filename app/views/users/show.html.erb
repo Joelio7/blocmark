@@ -1,18 +1,28 @@
 <h2> Welcome <%= @user.username %>  </h2>
+<h3> Topics created by you! </h3>
+    <div class="topics">
+      <% @topics.each do |topic|  %>
+      <div id="delete">
+      <p><%= link_to "Delete topic", topic, method: :delete, class: "btn btn-danger btn-xs" %></p>
+    </div>
 
-
-    <h3> Topics created by you! </h3>
-
-      <% @user.topics.each do |topic|  %>
       <p><%= link_to topic.title, topic %></p>
+    </div>
 
-      <p><%= link_to "Delete", topic, method: :delete %></p>
+      <div id="bookmarks">
+      <% topic.bookmarks.each do |bookmark| %>
+      <p2><%= link_to bookmark.url, bookmark.url %></p2>
+    </div>
+
+
+      <% end %>
+
 
     <% end %>
-    
+
 
 
   <div class="footer">
     <h4>See what other people are interested in</h4>
-  <%= link_to "Go to topics", root_path, method: :get, class: "btn btn-primary" %>
+  <%= link_to "Go to topics", root_path, method: :get, class: "btn btn-info" %>
   </div>

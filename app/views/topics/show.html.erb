@@ -1,15 +1,22 @@
 
   <h1><%= @topic.title %></h1>
 
+
+
   <div class="row">
     <%= render partial: 'bookmarks/form', locals: {topic: @topic, bookmark: @new_bookmark} %>
 
     <div class="col-md-8">
       <% @topic.bookmarks.each do |bookmark| %>
         <p><%= link_to bookmark.url %></p>
+          <%= render partial: 'likes/like', locals: { bookmark: bookmark} %>
+
+
       <% end %>
     </div>
   </div>
   <div class='col-md-4'>
+
+
     <%= link_to "Back To Topics", root_path, method: :get, class: "btn btn-primary" %>
   </div>

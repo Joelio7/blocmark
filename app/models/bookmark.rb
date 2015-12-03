@@ -1,6 +1,6 @@
 class Bookmark < ActiveRecord::Base
   require 'uri'
-
+   has_many :likes, dependent: :destroy
   belongs_to :user
   belongs_to :topic
   validates :url, length: { minimum: 10 }, presence: true, format: { with: URI.regexp}

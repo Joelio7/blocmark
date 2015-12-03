@@ -3,7 +3,6 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
-    @bookmark = Bookmark.find(params[:id])
     @new_bookmark = Bookmark.new
 
   end
@@ -14,9 +13,10 @@ class TopicsController < ApplicationController
 
   def create
 
+
       @topic = Topic.new(topic_params)
       @topic.user = current_user
-
+      authorize @topic
       if @topic.save
       flash[:notice] = "Topic was saved"
       redirect_to request.referer
@@ -28,10 +28,10 @@ class TopicsController < ApplicationController
 
   def destroy
     @topic = Topic.find(params[:id])
-
+    authorize @topic
     if @topic.destroy
       flash[:notice] = "\"#{@topic.title}\" was deleted successfully."
-      redirect_to root_path
+      redirect_to request.referer
     else
       flash[:error] = "topic was not delete, please try again"
       render :new

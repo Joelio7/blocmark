@@ -3,6 +3,5 @@
 <% @topics.each do |topic| %>
  <p><%= link_to topic.title %></p>
 <% end %>
-
 <h1>New Topic</h1>
 <%= render partial: "topics/form", locals: {topic: @topic} %>
