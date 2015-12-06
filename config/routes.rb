@@ -12,4 +12,7 @@ get "welcome/index" =>  'welcome#index'
     resources :likes, only: [:create, :destroy]
   end
   resources :incoming, only: [:create]
+
+  #Incoming mail Controller
+  post :incoming, to: "incoming#create"
 end
