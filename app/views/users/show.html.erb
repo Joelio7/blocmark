@@ -13,13 +13,15 @@
         <h4>Bookmarks created by you!</h4>
       <% @user.bookmarks.each do |bookmark| %>
       <p><%= link_to bookmark.url, bookmark.url %></p>
+
       <% end %>
     </div>
 
     <div id="liked_bookmarks">
-      <h3>Liked Bookmarks</h3>
-      <% @liked_bookmarks.each do |bookmark| %>
-      <%= link_to bookmark.url, bookmark.url  %>
+      <h3>my favorite bookmarks</h3>
+      <p><% @liked_bookmarks.each do |bookmark| %></p>
+
+        <%= render partial: 'bookmarks/bookmark', locals: { bookmark: bookmark} %>
       <% end %>
 
     </div>
