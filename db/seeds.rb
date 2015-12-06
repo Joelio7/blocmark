@@ -1,10 +1,23 @@
 include RandomData
 
+
+
+  15.times do
+    User.create!(
+    username: RandomData.random_word,
+    email:    RandomData.random_email,
+    password: RandomData.random_sentence
+
+
+    )
+  end
+  users = User.all
 #create topics
 
   30.times do
 
     Topic.create!(
+    user: users.sample,
     title: RandomData.random_sentence
     )
   end
@@ -14,6 +27,7 @@ include RandomData
   50.times do
 
     Bookmark.create!(
+    user:  users.sample,
     topic: topics.sample,
     url: RandomData.random_url
     )
@@ -26,5 +40,6 @@ include RandomData
   )
 
   puts "Seeds finished"
+  puts "#{User.count} users created"
   puts "#{Bookmark.count} bookmarks created"
   puts "#{Topic.count} topics created"

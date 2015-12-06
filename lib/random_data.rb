@@ -23,6 +23,10 @@ module RandomData
        letters[0,rand(3..8)].join
      end
 
+     def random_email
+       "#{random_word}@#{random_word}.#{random_word}"
+     end
+
      def random_url
        "https://www.#{random_word}.com"
      end

@@ -2,26 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+h3{
+  height: 50px;
+  padding-bottom: 20px;
+}
 h2 {
   text-align: center;
+  padding-top: 50px;
+  padding-bottom: -20px;
 }
+ #topics   {
 
-.footer {
-  position: absolute;
-  bottom: 30px;
-}
- #bookmarks {
-   text-align: center;
-   padding-bottom: 20px;
+   
  }
-  #delete p {
-    padding-top: 30px; 
-   margin-top: 30px;
-   font-size: 15px;
+.footer {
+  position: fixed;
+  bottom: 0;
 
 }
+ #bookmarks  {
+   height: 100px;
+   padding-bottom: 100px;
+   text-align: center;
 
- p {
-   position: inherit;
-   font-size: 20px;
  }

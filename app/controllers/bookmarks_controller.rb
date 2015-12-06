@@ -6,13 +6,15 @@ class BookmarksController < ApplicationController
   end
 
   def new
+    @user = User.find(params[current_user])
     @topic = Topic.find(params[:topic_id])
-    @bookmark = Bookmark.new
+    @bookmark = current_user.bookmarks.new
   end
 
   def create
     @topic = Topic.find(params[:topic_id])
-    @bookmark = @topic.bookmarks.build(bookmark_params)
+  @bookmark = current_user.bookmarks.new
+    @bookmark = current_user.bookmarks.build(bookmark_params)
     authorize @bookmark
     if @bookmark.save
       flash[:notice] = "Bookmark saved"

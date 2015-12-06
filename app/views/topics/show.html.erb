@@ -7,12 +7,7 @@
     <%= render partial: 'bookmarks/form', locals: {topic: @topic, bookmark: @new_bookmark} %>
 
     <div class="col-md-8">
-      <% @topic.bookmarks.each do |bookmark| %>
-        <p><%= link_to bookmark.url %></p>
-          <%= render partial: 'likes/like', locals: { bookmark: bookmark} %>
-
-
-      <% end %>
+      <%= render partial: "bookmarks/bookmark", collection: @topic.bookmarks %>
     </div>
   </div>
   <div class='col-md-4'>
