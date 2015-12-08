@@ -43,9 +43,7 @@ Rails.application.configure do
 
 
 
-if Rails.env.development?
-  ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor)
-end
+
 # Makes debugging *way* easier.
 ActionMailer::Base.raise_delivery_errors = true
 
