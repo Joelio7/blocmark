@@ -1,4 +1,12 @@
-<p>
-  <%= link_to bookmark.url, bookmark.url %>
-  <%= render partial: 'likes/like', locals: { bookmark: bookmark} %>
-</p>
+ <div class="bookmark-container">
+  <div>
+    <p>
+      Bookmark: <%= link_to bookmark.url, bookmark.url %>
+      <%= render partial: 'likes/like', locals: { bookmark: bookmark} %>
+      <p><small> <%=  bookmark.embedly[:description] %></small></p>
+      <div>
+        <%= image_tag(bookmark.embedly[:image]) %>
+      </div>
+    </p>
+  </div>
+</div>

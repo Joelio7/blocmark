@@ -2,27 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h3{
-  height: 50px;
-  padding-bottom: 20px;
-}
-h2 {
-  text-align: center;
-  padding-top: 50px;
-  padding-bottom: -20px;
-}
- #topics   {
 
-   
- }
-.footer {
-  position: fixed;
-  bottom: 0;
+  .users-jumbotron {
+    background-image: url('blackboard-569260_960_720 (1).jpg');
+    background-repeat: no-repeat;
+    background-size: cover ;
+  }
 
-}
- #bookmarks  {
-   height: 100px;
-   padding-bottom: 100px;
-   text-align: center;
+  h2 {
+    text-align: center;
+  }
+  .col-md-4 {
+    text-align: center;
+  }
 
- }
+  .users-container {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-bottom: 100px;
+    color: #989898 ;
+    text-shadow: black 2px 2px;
+    font-family: 'Architects Daughter', cursive;
+
+  }

@@ -1,33 +1,34 @@
-<h2> Welcome <%= @user.username %>  </h2>
 
-    <div id="topics">
-      <h3> Topics created by you! </h3>
-      <% @topics.each do |topic|  %>
-      <p><%= link_to "Delete topic", topic, method: :delete, class: "btn btn-danger btn-xs" %></p>
-      <p><%= link_to topic.title, topic.title %></p>
-      <% end %>
+
+<div class="users-jumbotron">
+  <div class="users-container">
+    <h2> Welcome <%= @user.username %>  </h2>
+      <div class="row">
+        <div class="col-md-4">
+          <h3>My topics</h3>
+          <% @topics.each do |topic|  %>
+            <p><%= link_to topic.title, topic %></p>
+            <p><%= link_to "Delete topic", topic, method: :delete, class: "btn btn-danger btn-xs" %></p>
+            <% end %>
+        </div>
+        <div class="col-md-4">
+          <div class="pigs">
+          <h3>My Bookmarks!</h3>
+        </div>
+          <% @user.bookmarks.each do |bookmark| %>
+            <p><%= link_to bookmark.url, bookmark.url %></p>
+          <% end %>
+        </div>
+        <div class="col-md-4">
+          <h3>Bookmarks I like!</h3>
+          <p><% @liked_bookmarks.each do |bookmark| %></p>
+            <%= render partial: 'bookmarks/bookmark', locals: { bookmark: bookmark} %>
+            <% end %>
+        </div>
+        <div>
+          <h4>See what other people are interested in</h4>
+          <%= link_to "Go to topics", root_path, method: :get, class: "btn btn-info" %>
+        </div>
+      </div>
     </div>
-
-
-      <div id="bookmarks">
-        <h4>Bookmarks created by you!</h4>
-      <% @user.bookmarks.each do |bookmark| %>
-      <p><%= link_to bookmark.url, bookmark.url %></p>
-
-      <% end %>
-    </div>
-
-    <div id="liked_bookmarks">
-      <h3>my favorite bookmarks</h3>
-      <p><% @liked_bookmarks.each do |bookmark| %></p>
-
-        <%= render partial: 'bookmarks/bookmark', locals: { bookmark: bookmark} %>
-      <% end %>
-
-    </div>
-
-
-  <div class="footer">
-    <h4>See what other people are interested in</h4>
-  <%= link_to "Go to topics", root_path, method: :get, class: "btn btn-info" %>
   </div>

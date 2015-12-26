@@ -29,7 +29,8 @@ include RandomData
     Bookmark.create!(
     user:  users.sample,
     topic: topics.sample,
-    url: RandomData.random_url
+    url: RandomData.random_url,
+    description: RandomData.random_sentence
     )
   end
 

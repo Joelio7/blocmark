@@ -1,9 +1,29 @@
-<h1>Welcome to Blocmarks</h1>
-  <h4>New Topic</h4>
-  <%= render partial: "topics/form", locals: {topic: @new_topic} %>
-  <div id="topics">
-  <h3> choose a topic </h3>
-  <% @topics.each do |topic| %>
-   <p><%= link_to topic.title, topic %></p>
-  <% end %>
-</div>
+<div class="topics-jumbotron">
+    <div class="topics-container">
+        <div class="topic-head">
+          <h1>Welcome to Blocmarks</h1>
+        </div>
+          <div class="col-md-4">
+            <p><strong> Select or create a topic that interests you. It can be anything!</strong> </p>
+            </div>
+            <div class="col-md-4">
+              <p><strong> Follow the links to resources that will help you learn the things that interest you!</strong></p>
+            </div>
+            <div class="col-md-4">
+              <p><strong> Share what you have learned by adding resources to topics!</strong></p>
+              </div>
+        </div>
+        <div class="new-topic">
+          <h3>New Topic</h3>
+
+            <%= render partial: "topics/form", locals: {topic: @new_topic} %>
+          </div>
+            <div class="topic">
+            <h3> choose a topic </h3>
+              <% @topics.each do |topic| %>
+                <p><strong><%= link_to topic.title, topic %></strong></p>
+              <% end %>
+            </div>
+
+
+  </div>

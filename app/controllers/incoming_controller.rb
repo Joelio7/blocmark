@@ -9,7 +9,7 @@ class IncomingController < ApplicationController
     @url = "http://#{params['body-plain']}"
 
     @user = User.create(email: params[:sender], password: "#{params[:title]}_blocmarks") if @user.nil?
-    @topic = Topic.create(title: params[:title], user_id: @user.id) if @topic.nil?
+    @topic = Topic.create(title: params[:subject], user_id: @user.id) if @topic.nil?
 
     @bookmark = Bookmark.create( url: params['body-plain'])
     @bookmark.update_attributes(topic_id: @topic.id)
